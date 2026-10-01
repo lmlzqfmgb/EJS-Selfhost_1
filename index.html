@@ -502,5 +502,18 @@
                 });
             });
         </script>
+        <script>const originalFetch = window.fetch;
+window.fetch = async (...args) => {
+  alert("Fetching: " + args[0]);
+  try {
+    const response = await originalFetch(...args);
+    alert("Response Status: " + response.status);
+    return response;
+  } catch (error) {
+    alert("Fetch Failed: " + error.message);
+    throw error;
+  }
+};
+</script>
     </body>
 </html>
