@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="/mini-coi.js" scope="./"></script>
         <script>const originalFetch = window.fetch;
 window.fetch = async (...args) => {
   alert("Fetching: " + args[0]);
